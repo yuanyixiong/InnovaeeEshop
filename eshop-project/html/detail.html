@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/select2/css/select2.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/jquery.bxslider/jquery.bxslider.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/owl.carousel/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/fancyBox/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <title>轻实训电子商务平台-产品详情</title>
+</head>
+
+<body class="product-page">
+    <div id="header" class="header">
+        <div class="top-header">
+            <div class="container">
+                <div class="nav-top-links">
+                    <a class="first-item" href="#"><img src="images/phone.png" /> +8627 6552 2899 </a>
+                    <a href="contact.html"><img src="images/email.png" />联系我们</a>
+                </div>
+                <div class="language ">
+                    <div class="dropdown">
+                        <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                            <img src="images/fr.jpg" />中文
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#"><img src="images/en.jpg" />英文</a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="images/fr.jpg" />中文</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="support-link">
+                    <a href="contact.html">客户服务</a>
+                    <a href="contact.html">帮助中心</a>
+                    <a href="about.html">关于我们</a>
+                </div>
+                <div id="user-info-top" class="user-info pull-right">
+                    <div class="dropdown">
+                        <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="order.html"><span>我的账户</span></a>
+                        <ul class="dropdown-menu mega_dropdown" role="menu">
+                            <li><a href="login.html">登录</a></li>
+                            <li><a href="#">我的订单</a></li>
+                            <li><a href="#">我的收藏</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container main-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 logo">
+                    <a href="index.html"><img src="images/logo2.png" /></a>
+                </div>
+                <div class="col-xs-7 col-sm-7 header-search-box">
+                    <form class="form-inline">
+                        <div class="form-group form-category">
+                            <select class="select-category">
+                                <option value="2">羽绒服</option>
+                                <option value="1">护手霜</option>
+                                <option value="2">保暖内衣</option>
+                            </select>
+                        </div>
+                        <div class="form-group input-serach">
+                            <input type="text" placeholder="铃儿响 鹿儿跑 圣诞礼物提前购！">
+                        </div>
+                        <button type="submit" class="pull-right btn-search"></button>
+                    </form>
+                </div>
+                <div class="col-xs-5 col-sm-2 group-button-header">
+                    <a title="比较" href="compare.html" class="btn-compare">我的订单</a>
+                    <a title="收藏" href="wishlist.html" class="btn-heart">我的收藏</a>
+                    <div class="btn-cart" id="cart-block">
+                        <a title="购物车" href="order.html">购物车</a>
+                        <span class="notify notify-right">2</span>
+                        <div class="cart-block">
+                            <div class="cart-block-content">
+                                <h5 class="cart-title">购物车2件</h5>
+                                <div class="cart-block-list">
+                                    <ul>
+                                        <li class="product-info">
+                                            <div class="p-left">
+                                                <a href="#" class="remove_link"></a>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="images/product-100x122.jpg">
+                                                </a>
+                                            </div>
+                                            <div class="p-right">
+                                                <p class="p-name">女士睡衣</p>
+                                                <p class="p-rice">￥61.99</p>
+                                                <p>数量: 1</p>
+                                            </div>
+                                        </li>
+                                        <li class="product-info">
+                                            <div class="p-left">
+                                                <a href="#" class="remove_link"></a>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="images/product-s2-100x122.jpg">
+                                                </a>
+                                            </div>
+                                            <div class="p-right">
+                                                <p class="p-name">棉麻睡衣</p>
+                                                <p class="p-rice">￥79.99</p>
+                                                <p>数量: 1</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="toal-cart">
+                                    <span>总计</span>
+                                    <span class="toal-price pull-right">￥141.98</span>
+                                </div>
+                                <div class="cart-buttons">
+                                    <a href="order.html" class="btn-check-out">结账</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="nav-top-menu" class="nav-top-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3" id="box-vertical-megamenus">
+                        <div class="box-vertical-megamenus">
+                            <h4 class="title">
+                        <span class="title-menu">全部商品分类</span>
+                        <span class="btn-open-mobile pull-right home-page"><i class="fa fa-bars"></i></span>
+                    </h4>
+                            <div class="vertical-menu-content is-home">
+                                <ul class="vertical-menu-list">
+                                    <li>
+                                        <a href="#"><img class="icon-menu" src="images/12.png">家用电器</a>
+                                    </li>
+                                    <li>
+                                        <a class="parent" href="#"><img class="icon-menu" src="images/13.png">体育/运动户外</a>
+                                        <div class="vertical-dropdown-menu">
+                                            <div class="vertical-groups col-sm-12">
+                                                <div class="mega-group col-sm-4">
+                                                    <h4 class="mega-group-header"><span>体育用品</span></h4>
+                                                    <ul class="group-link-default">
+                                                        <li><a href="#">网球</a></li>
+                                                        <li><a href="#">乒乓球</a></li>
+                                                        <li><a href="#">羽毛球</a></li>
+                                                        <li><a href="#">篮球</a></li>
+                                                        <li><a href="#">足球</a></li>
+                                                        <li><a href="#">台球</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mega-group col-sm-4">
+                                                    <h4 class="mega-group-header"><span>运动鞋包</span></h4>
+                                                    <ul class="group-link-default">
+                                                        <li><a href="#">跑步鞋</a></li>
+                                                        <li><a href="#">休闲鞋</a></li>
+                                                        <li><a href="#">篮球鞋</a></li>
+                                                        <li><a href="#">运动包</a></li>
+                                                        <li><a href="#">足球鞋</a></li>
+                                                        <li><a href="#">帆布鞋</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mega-group col-sm-4">
+                                                    <h4 class="mega-group-header"><span>运动服饰</span></h4>
+                                                    <ul class="group-link-default">
+                                                        <li><a href="#">运动套装</a></li>
+                                                        <li><a href="#">运动裤</a></li>
+                                                        <li><a href="#">运动配饰</a></li>
+                                                        <li><a href="#">运动背心</a></li>
+                                                        <li><a href="#">训练服</a></li>
+                                                        <li><a href="#">T恤</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mega-custom-html col-sm-12">
+                                                    <a href="#"><img src="images/banner-megamenu.jpg"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img class="icon-menu" src="images/14.png">智能手机/平板电脑</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img class="icon-menu" src="images/15.png">化妆/清洁用品</a>
+                                    </li>
+                                    <li>
+                                        <a class="parent" href="#">
+                                            <img class="icon-menu" src="images/16.png">衣服/珠宝</a>
+                                        <div class="vertical-dropdown-menu">
+                                            <div class="vertical-groups col-sm-12">
+                                                <div class="mega-group col-sm-12">
+                                                    <h4 class="mega-group-header"><span>国际品牌</span></h4>
+                                                    <div class="row mega-products">
+                                                        <div class="col-sm-3 mega-product">
+                                                            <div class="product-avatar">
+                                                                <a href="#"><img src="images/p10.jpg"></a>
+                                                            </div>
+                                                            <div class="product-name">
+                                                                <a href="#">时尚外套</a>
+                                                            </div>
+                                                            <div class="product-price">
+                                                                <div class="new-price">￥588</div>
+                                                                <div class="old-price">￥455</div>
+                                                            </div>
+                                                            <div class="product-star">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star-half-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3 mega-product">
+                                                            <div class="product-avatar">
+                                                                <a href="#"><img src="images/p11.jpg"></a>
+                                                            </div>
+                                                            <div class="product-name">
+                                                                <a href="#">休闲裤</a>
+                                                            </div>
+                                                            <div class="product-price">
+                                                                <div class="new-price">￥438</div>
+                                                                <div class="old-price">￥445</div>
+                                                            </div>
+                                                            <div class="product-star">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star-half-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3 mega-product">
+                                                            <div class="product-avatar">
+                                                                <a href="#"><img src="images/p12.jpg"></a>
+                                                            </div>
+                                                            <div class="product-name">
+                                                                <a href="#">精致套装</a>
+                                                            </div>
+                                                            <div class="product-price">
+                                                                <div class="new-price">￥358</div>
+                                                                <div class="old-price">￥455</div>
+                                                            </div>
+                                                            <div class="product-star">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star-half-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3 mega-product">
+                                                            <div class="product-avatar">
+                                                                <a href="#"><img src="images/p13.jpg"></a>
+                                                            </div>
+                                                            <div class="product-name">
+                                                                <a href="#">男士鞋</a>
+                                                            </div>
+                                                            <div class="product-price">
+                                                                <div class="new-price">￥380</div>
+                                                                <div class="old-price">￥450</div>
+                                                            </div>
+                                                            <div class="product-star">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star-half-o"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img class="icon-menu" src="images/17.png">母婴/玩具乐器</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img class="icon-menu" src="images/18.png">电器/办公</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img class="icon-menu" src="images/19.png">笔记本电脑及配件</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img class="icon-menu" src="images/20.png">珠宝/手表</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img class="icon-menu" src="images/21.png">手电筒/台灯</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img class="icon-menu" src="images/21.png"> 数码/相机
+                                        </a>
+                                    </li>
+                                    <li class="cat-link-orther">
+                                        <a href="#">
+                                            <img class="icon-menu" src="images/22.png"> 电视
+                                        </a>
+                                    </li>
+                                    <li class="cat-link-orther">
+                                        <a href="#">
+                                            <img class="icon-menu" src="images/12.png">电脑/网络
+                                        </a>
+                                    </li>
+                                    <li class="cat-link-orther">
+                                        <a href="#">
+                                            <img class="icon-menu" src="images/14.png"> 玩具
+                                        </a>
+                                    </li>
+                                    <li class="cat-link-orther">
+                                        <a href="#"><img class="icon-menu" src="images/17.png">珠宝/手表</a>
+                                    </li>
+                                </ul>
+                                <div class="all-category"><span class="open-cate">所有分类</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="main-menu" class="col-sm-9 main-menu">
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                    <a class="navbar-brand" href="#">菜单</a>
+                                </div>
+                                <div id="navbar" class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active"><a href="index.html">首页</a></li>
+                                        <li class="dropdown">
+                                            <a href="category.html" class="dropdown-toggle" data-toggle="dropdown">时尚衣物</a>
+                                            <ul class="dropdown-menu mega_dropdown" role="menu">
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="#">
+                                                                <img class="img-responsive" src="images/men.png">
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="#">男士</a>
+                                                        </li>
+                                                        <li class="link_container"><a href="#">羽绒服</a></li>
+                                                        <li class="link_container"><a href="#">棉服</a></li>
+                                                        <li class="link_container"><a href="#">针织衫</a></li>
+                                                        <li class="link_container"><a href="#">夹克</a></li>
+                                                        <li class="link_container"><a href="#">羊毛衫</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="#">
+                                                                <img class="img-responsive" src="images/women.png">
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="#">女士</a>
+                                                        </li>
+                                                        <li class="link_container"><a href="#">毛呢大衣</a></li>
+                                                        <li class="link_container"><a href="#">羽绒服</a></li>
+                                                        <li class="link_container"><a href="#">棉服</a></li>
+                                                        <li class="link_container"><a href="#">连衣裙</a></li>
+                                                        <li class="link_container"><a href="#">卫衣</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="#">
+                                                                <img class="img-responsive" src="images/kid.png">
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="#">小孩</a>
+                                                        </li>
+                                                        <li class="link_container"><a href="#">羽绒服</a></li>
+                                                        <li class="link_container"><a href="#">牛仔裤</a></li>
+                                                        <li class="link_container"><a href="#">毛衣</a></li>
+                                                        <li class="link_container"><a href="#">棉服</a></li>
+                                                        <li class="link_container"><a href="#">卫衣</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="#">
+                                                                <img class="img-responsive" src="images/trending.png">
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="#">珠宝首饰</a>
+                                                        </li>
+                                                        <li class="link_container"><a href="#">时尚饰品</a></li>
+                                                        <li class="link_container"><a href="#">钻石</a></li>
+                                                        <li class="link_container"><a href="#">翡翠玉石</a></li>
+                                                        <li class="link_container"><a href="#">银饰</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="category.html" class="dropdown-toggle" data-toggle="dropdown">运动器材</a></li>
+                                        <li class="dropdown">
+                                            <a href="category.html" class="dropdown-toggle" data-toggle="dropdown">食品/特产</a>
+                                            <ul class="mega_dropdown dropdown-menu">
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="link_container group_header">
+                                                            <a href="#">进口食品</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">进口牛奶</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">进口巧克力</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">进口咖啡</a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="#">进口酒</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">进口水果</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">进口肉类</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">进口罐头</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">进口生鲜</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="link_container group_header">
+                                                            <a href="#">特色品牌</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">三只松鼠</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">良品铺子</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">周黑鸭</a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="#">德芙</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">百草味</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">德亚</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">福临门</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">百味来</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="link_container group_header">
+                                                            <a href="#">零食</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">坚果礼盒</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">蜜饯</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">红枣</a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="#">饼干</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">肉松饼</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">糖果</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">海苔</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="#">豆干</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <img src="images/banner-topmenu.jpg">
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="category.html" class="dropdown-toggle" data-toggle="dropdown">数码/相机</a>
+                                            <ul class="dropdown-menu container-fluid">
+                                                <li class="block-container">
+                                                    <ul class="block">
+                                                        <li class="link_container"><a href="#">手机</a></li>
+                                                        <li class="link_container"><a href="#">平板电脑</a></li>
+                                                        <li class="link_container"><a href="#">笔记本电脑</a></li>
+                                                        <li class="link_container"><a href="#">存储卡</a></li>
+                                                        <li class="link_container"><a href="#">配件</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="category.html">家用电器</a></li>
+                                        <li><a href="category.html">珠宝/首饰</a></li>
+                                        <li><a href="contact.html">联系我们</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div id="form-search-opntop">
+                </div>
+                <div id="user-info-opntop">
+                </div>
+                <div id="shopping-cart-box-ontop">
+                    <i class="fa fa-shopping-cart"></i>
+                    <div class="shopping-cart-box-ontop-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="columns-container">
+        <div class="container" id="columns">
+            <div class="breadcrumb clearfix">
+                <a class="home" href="index.html" title="Return to Home">首页</a>
+                <span class="navigation-pipe">&nbsp;</span>
+                <a href="#" title="Return to Home">时尚</a>
+                <span class="navigation-pipe">&nbsp;</span>
+                <a href="#" title="Return to Home">女士</a>
+                <span class="navigation-pipe">&nbsp;</span>
+                <a href="#" title="Return to Home">衣服</a>
+                <span class="navigation-pipe">&nbsp;</span>
+                <span class="navigation_page">衬衣</span>
+            </div>
+            <div class="row">
+                <div class="column col-xs-12 col-sm-3" id="left_column">
+                    <div class="block left-module">
+                        <p class="title_block">分类</p>
+                        <div class="block_content">
+                            <div class="layered layered-category">
+                                <div class="layered-content">
+                                    <ul class="tree-menu">
+                                        <li class="active"><span></span><a href="#">最热推荐</a></li>
+                                        <li><span></span><a href="#">中长款羽绒</a></li>
+                                        <li><span></span><a href="#">短款羽绒</a></li>
+                                        <li><span></span><a href="#">长袖连衣裙 </a></li>
+                                        <li><span></span><a href="#">中长款毛呢</a></li>
+                                        <li><span></span><a href="#">韩版毛呢</a></li>
+                                        <li><span></span><a href="#">套头针织</a></li>
+                                        <li><span></span><a href="#">打底裤</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block left-module">
+                        <p class="title_block">畅销产品</p>
+                        <div class="block_content">
+                            <div class="owl-carousel owl-best-sell" data-loop="true" data-nav="false" data-margin="0" data-autoplayTimeout="1000" data-autoplay="true" data-autoplayHoverPause="true" data-items="1">
+                                <ul class="products-block best-sell">
+                                    <li>
+                                        <div class="products-block-left">
+                                            <a href="#">
+                                                <img src="images/product-100x122.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="products-block-right">
+                                            <p class="product-name">
+                                                <a href="#">白色衬衣</a>
+                                            </p>
+                                            <p class="product-price">￥38,95</p>
+                                            <p class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="products-block-left">
+                                            <a href="#">
+                                                <img src="images/p11.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="products-block-right">
+                                            <p class="product-name">
+                                                <a href="#">银饰挂饰</a>
+                                            </p>
+                                            <p class="product-price">￥38,95</p>
+                                            <p class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="products-block-left">
+                                            <a href="#">
+                                                <img src="images/p12.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="products-block-right">
+                                            <p class="product-name">
+                                                <a href="#">鞋子</a>
+                                            </p>
+                                            <p class="product-price">￥38,95</p>
+                                            <p class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="products-block best-sell">
+                                    <li>
+                                        <div class="products-block-left">
+                                            <a href="#">
+                                                <img src="images/product-100x122.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="products-block-right">
+                                            <p class="product-name">
+                                                <a href="#">白色衬衣</a>
+                                            </p>
+                                            <p class="product-price">￥38,95</p>
+                                            <p class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="products-block-left">
+                                            <a href="#">
+                                                <img src="images/p11.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="products-block-right">
+                                            <p class="product-name">
+                                                <a href="#">银饰挂饰</a>
+                                            </p>
+                                            <p class="product-price">￥38,95</p>
+                                            <p class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="products-block-left">
+                                            <a href="#">
+                                                <img src="images/p12.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="products-block-right">
+                                            <p class="product-name">
+                                                <a href="#">鞋子</a>
+                                            </p>
+                                            <p class="product-price">￥38,95</p>
+                                            <p class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-left-slide left-module">
+                        <ul class="owl-carousel owl-style2" data-loop="true" data-nav="false" data-margin="0" data-autoplayTimeout="1000" data-autoplayHoverPause="true" data-items="1" data-autoplay="true">
+                            <li>
+                                <a href="#"><img src="images/slide-left.jpg"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="images/slide-left2.jpg"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="images/slide-left3.jpg"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block left-module">
+                        <p class="title_block">销售</p>
+                        <div class="block_content product-onsale">
+                            <ul class="product-list owl-carousel" data-loop="true" data-nav="false" data-margin="0" data-autoplayTimeout="1000" data-autoplayHoverPause="true" data-items="1" data-autoplay="true">
+                                <li>
+                                    <div class="product-container">
+                                        <div class="left-block">
+                                            <a href="#">
+                                                <img class="img-responsive" src="images/product-260x317.jpg" />
+                                            </a>
+                                            <div class="price-percent-reduction2">-30%</div>
+                                        </div>
+                                        <div class="right-block">
+                                            <h5 class="product-name"><a href="#">白色衬衣</a></h5>
+                                            <div class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                            <div class="content_price">
+                                                <span class="price product-price">￥38,95</span>
+                                                <span class="price old-price">￥52,00</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <a class="btn-add-cart" title="加入购物车" href="#add">加入购物车</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-container">
+                                        <div class="left-block">
+                                            <a href="#">
+                                                <img class="img-responsive" src="images/p35.jpg" />
+                                            </a>
+                                            <div class="price-percent-reduction2">-10%</div>
+                                        </div>
+                                        <div class="right-block">
+                                            <h5 class="product-name"><a href="#">银饰挂饰</a></h5>
+                                            <div class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                            <div class="content_price">
+                                                <span class="price product-price">￥38,95</span>
+                                                <span class="price old-price">￥52,00</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <a class="btn-add-cart" title="加入购物车" href="#add">加入购物车</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-container">
+                                        <div class="left-block">
+                                            <a href="#">
+                                                <img class="img-responsive" src="images/p37.jpg" />
+                                            </a>
+                                            <div class="price-percent-reduction2">-42%</div>
+                                        </div>
+                                        <div class="right-block">
+                                            <h5 class="product-name"><a href="#">百褶裙</a></h5>
+                                            <div class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                            <div class="content_price">
+                                                <span class="price product-price">￥38,95</span>
+                                                <span class="price old-price">￥52,00</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <a class="btn-add-cart" title="加入购物车" href="#add">加入购物车</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-left-slide left-module detail-banner">
+                        <div class="banner-opacity">
+                            <a href="#"><img src="images/detail-banner.jpg"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="center_column col-xs-12 col-sm-9" id="center_column">
+                    <div id="product">
+                        <div class="primary-box row">
+                            <div class="pb-left-column col-xs-12 col-sm-6">
+                                <div class="product-image">
+                                    <div class="product-full">
+                                        <img id="product-zoom" src='images/product-s3-420x512.jpg' data-zoom-image="images/product-s3-850x1036.jpg" />
+                                    </div>
+                                    <div class="product-img-thumb" id="gallery_01">
+                                        <ul class="owl-carousel" data-items="3" data-nav="true" data-dots="false" data-margin="20" data-loop="true">
+                                            <li>
+                                                <a href="#" data-image="images/product-s3-420x512.jpg" data-zoom-image="images/product-s3-850x1036.jpg">
+                                                    <img id="product-zoom" src="images/product-s3-100x122.jpg" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-image="images/product-s2-420x512.jpg" data-zoom-image="images/product-s2-850x1036.jpg">
+                                                    <img id="product-zoom" src="images/product-s2-100x122.jpg" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-image="images/product-420x512.jpg" data-zoom-image="images/product-850x1036.jpg">
+                                                    <img id="product-zoom" src="images/product-100x122.jpg" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-image="images/product-s4-420x512.jpg" data-zoom-image="images/product-s4-850x1036.jpg">
+                                                    <img id="product-zoom" src="images/product-s4-100x122.jpg" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-image="images/product-s6-420x512.jpg" data-zoom-image="images/product-s6-850x1036.jpg">
+                                                    <img id="product-zoom" src="images/product-s6-100x122.jpg" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pb-right-column col-xs-12 col-sm-6">
+                                <h1 class="product-name">棉麻上衣加挂饰</h1>
+                                <div class="product-comments">
+                                    <div class="product-star">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                    </div>
+                                    <div class="comments-advices">
+                                        <a href="#">评级：3</a>
+                                        <a href="#"><i class="fa fa-pencil"></i> 评论</a>
+                                    </div>
+                                </div>
+                                <div class="product-price-group">
+                                    <span class="price">￥38.95</span>
+                                    <span class="old-price">￥52.00</span>
+                                    <span class="discount">-30%</span>
+                                </div>
+                                <div class="info-orther">
+                                    <p>编号: #453217907</p>
+                                    <p>库存: <span class="in-stock">有存货</span></p>
+                                    <p>款式: 新款</p>
+                                </div>
+                                <div class="product-desc">
+                                    本站商品信息均来自于合作方，其真实性、准确性和合法性由信息拥有者（合作方）负责。本站不提供任何保证，并不承担任何法律责任。印刷版次不同，印刷时间和版次以实物为准。
+                                </div>
+                                <div class="form-option">
+                                    <p class="form-option-title">选项:</p>
+                                    <div class="attributes">
+                                        <div class="attribute-label">颜色:</div>
+                                        <div class="attribute-list">
+                                            <ul class="list-color">
+                                                <li class="list-color1"><a href="#">蓝</a></li>
+                                                <li class="list-color2" class="active"><a href="#">绿</a></li>
+                                                <li class="list-color3"><a href="#">灰</a></li>
+                                                <li class="list-color4"><a href="#">黄</a></li>
+                                                <li class="list-color5"><a href="#">青</a></li>
+                                                <li class="list-color6"><a href="#">红</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="attributes">
+                                        <div class="attribute-label">数量:</div>
+                                        <div class="attribute-list product-qty">
+                                            <div class="qty">
+                                                <input id="option-product-qty" type="text" value="1">
+                                            </div>
+                                            <div class="btn-plus">
+                                                <a href="#" class="btn-plus-up">
+                                                    <i class="fa fa-caret-up"></i>
+                                                </a>
+                                                <a href="#" class="btn-plus-down">
+                                                    <i class="fa fa-caret-down"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="attributes">
+                                        <div class="attribute-label">尺寸:</div>
+                                        <div class="attribute-list">
+                                            <select>
+                                                <option value="1">X</option>
+                                                <option value="2">XL</option>
+                                                <option value="3">XXL</option>
+                                            </select>
+                                            <a id="size_chart" class="fancybox" href="images/size-chart.jpg">尺码表</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-action">
+                                    <div class="button-group">
+                                        <a class="btn-add-cart" href="order.html">加入购物车</a>
+                                    </div>
+                                    <div class="button-group">
+                                        <a class="wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i>
+                                        <br>清单</a>
+                                        <a class="compare" href="compare.html"><i class="fa fa-signal"></i>
+                                        <br>比较</a>
+                                    </div>
+                                </div>
+                                <div class="form-share">
+                                    <div class="sendtofriend-print">
+                                        <a href="javascript:print();"><i class="fa fa-print"></i> 打印</a>
+                                        <a href="#"><i class="fa fa-envelope-o fa-fw"></i>分享</a>
+                                    </div>
+                                    <div class="network-share">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-tab">
+                            <ul class="nav-tab">
+                                <li class="active">
+                                    <a aria-expanded="false" data-toggle="tab" href="#product-detail">产品详情</a>
+                                </li>
+                                <li>
+                                    <a aria-expanded="true" data-toggle="tab" href="#information">详细资料</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#reviews">商品评价</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#guarantees">售后保障</a>
+                                </li>
+                            </ul>
+                            <div class="tab-container">
+                                <div id="product-detail" class="tab-panel active">
+                                    <p>
+                                        商品名称：棉麻上衣加挂饰51151182 彩色 M 商品编号：1775205350 店铺： 服饰旗舰店 上架时间：2015-11-16 12:44:51 商品毛重：280.00g 货号：51151182 腰型：中腰 风格：甜美 领型：圆领
+                                    </p>
+                                    <p>
+                                        质地：棉 颜色：其他 适用年龄：25-29周岁 图案：其它 适用类型：职场/商战 尺码：均码 裙型：伞裙 类型：连衣裙
+                                    </p>
+                                    <p>
+                                        流行元素：简约 组合形式：单件 衣门襟：套头 版型：修身型 袖型：其它 裙长：短裙（76-90cm） 袖长：长袖 款式：裹胸式 上市时间：2015春季
+                                    </p>
+                                </div>
+                                <div id="information" class="tab-panel">
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <td width="200">质地</td>
+                                            <td>棉花</td>
+                                        </tr>
+                                        <tr>
+                                            <td>尺码</td>
+                                            <td>均码</td>
+                                        </tr>
+                                        <tr>
+                                            <td>裙型</td>
+                                            <td>伞裙</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="reviews" class="tab-panel">
+                                    <div class="product-comments-block-tab">
+                                        <div class="comment row">
+                                            <div class="col-sm-3 author">
+                                                <div class="grade">
+                                                    <span>评价</span>
+                                                    <span class="reviewRating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="info-author">
+                                                    <span><strong>胡小悠</strong></span>
+                                                    <em>2015-12-24</em>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-9 commnet-dettail">
+                                                有点薄，款式不错。做工不错，穿着很舒服。
+                                            </div>
+                                        </div>
+                                        <div class="comment row">
+                                            <div class="col-sm-3 author">
+                                                <div class="grade">
+                                                    <span>评价</span>
+                                                    <span class="reviewRating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="info-author">
+                                                    <span><strong>莲……雪</strong></span>
+                                                    <em>2015-12-24</em>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-9 commnet-dettail">
+                                                发货速度快，质量好！真不错不错
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <a class="btn-comment" href="#">填写评论 !</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div id="guarantees" class="tab-panel">
+                                    <p>本站商品信息均来自于合作方，其真实性、准确性和合法性由信息拥有者（合作方）负责。本站不提供任何保证，并不承担任何法律责任。印刷版次不同，印刷时间和版次以实物为准。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./tab product -->
+                        <!-- box product -->
+                        <div class="page-product-box">
+                            <h3 class="heading">相关产品</h3>
+                            <ul class="product-list owl-carousel" data-dots="false" data-loop="true" data-nav="true" data-margin="30" data-autoplayTimeout="1000" data-autoplayHoverPause="true" data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":3}}'>
+                                <li>
+                                    <div class="product-container">
+                                        <div class="left-block">
+                                            <a href="#">
+                                                <img class="img-responsive" src="images/p40.jpg" />
+                                            </a>
+                                            <div class="quick-view">
+                                                <a title="收藏" class="heart" href="wishlist.html"></a>
+                                                <a title="比较" class="compare" href="compare.html"></a>
+                                                <a title="查看" class="search" href="detail.html"></a>
+                                            </div>
+                                            <div class="add-to-cart">
+                                                <a title="加入购物车" href="#add">加入购物车</a>
+                                            </div>
+                                        </div>
+                                        <div class="right-block">
+                                            <h5 class="product-name"><a href="#">披风</a></h5>
+                                            <div class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                            <div class="content_price">
+                                                <span class="price product-price">￥38,95</span>
+                                                <span class="price old-price">￥52,00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-container">
+                                        <div class="left-block">
+                                            <a href="#">
+                                                <img class="img-responsive" src="images/p35.jpg" />
+                                            </a>
+                                            <div class="quick-view">
+                                                <a title="收藏" class="heart" href="wishlist.html"></a>
+                                                <a title="比较" class="compare" href="compare.html"></a>
+                                                <a title="查看" class="search" href="detail.html"></a>
+                                            </div>
+                                            <div class="add-to-cart">
+                                                <a title="加入购物车" href="#add">加入购物车</a>
+                                            </div>
+                                        </div>
+                                        <div class="right-block">
+                                            <h5 class="product-name"><a href="#">银饰挂饰</a></h5>
+                                            <div class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                            <div class="content_price">
+                                                <span class="price product-price">￥38,95</span>
+                                                <span class="price old-price">￥52,00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-container">
+                                        <div class="left-block">
+                                            <a href="#">
+                                                <img class="img-responsive" src="images/p37.jpg" />
+                                            </a>
+                                            <div class="quick-view">
+                                                <a title="收藏" class="heart" href="wishlist.html"></a>
+                                                <a title="比较" class="compare" href="compare.html"></a>
+                                                <a title="查看" class="search" href="detail.html"></a>
+                                            </div>
+                                            <div class="add-to-cart">
+                                                <a title="加入购物车" href="#add">加入购物车</a>
+                                            </div>
+                                        </div>
+                                        <div class="right-block">
+                                            <h5 class="product-name"><a href="#">百褶裙</a></h5>
+                                            <div class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                            <div class="content_price">
+                                                <span class="price product-price">￥38,95</span>
+                                                <span class="price old-price">￥52,00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-container">
+                                        <div class="left-block">
+                                            <a href="#">
+                                                <img class="img-responsive" src="images/p39.jpg" />
+                                            </a>
+                                            <div class="quick-view">
+                                                <a title="收藏" class="heart" href="wishlist.html"></a>
+                                                <a title="比较" class="compare" href="compare.html"></a>
+                                                <a title="查看" class="search" href="detail.html"></a>
+                                            </div>
+                                            <div class="add-to-cart">
+                                                <a title="加入购物车" href="#add">加入购物车</a>
+                                            </div>
+                                        </div>
+                                        <div class="right-block">
+                                            <h5 class="product-name"><a href="#">上衣</a></h5>
+                                            <div class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                            <div class="content_price">
+                                                <span class="price product-price">￥38,95</span>
+                                                <span class="price old-price">￥52,00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="page-product-box">
+                            <h3 class="heading">你可能喜欢</h3>
+                            <ul class="product-list owl-carousel" data-dots="false" data-loop="true" data-nav="true" data-margin="30" data-autoplayTimeout="1000" data-autoplayHoverPause="true" data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":3}}'>
+                                <li>
+                                    <div class="product-container">
+                                        <div class="left-block">
+                                            <a href="#">
+                                                <img class="img-responsive" src="images/p97.jpg" />
+                                            </a>
+                                            <div class="quick-view">
+                                                <a title="收藏" class="heart" href="wishlist.html"></a>
+                                                <a title="比较" class="compare" href="compare.html"></a>
+                                                <a title="查看" class="search" href="detail.html"></a>
+                                            </div>
+                                            <div class="add-to-cart">
+                                                <a title="加入购物车" href="#add">加入购物车</a>
+                                            </div>
+                                        </div>
+                                        <div class="right-block">
+                                            <h5 class="product-name"><a href="#">披风</a></h5>
+                                            <div class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                            <div class="content_price">
+                                                <span class="price product-price">￥38,95</span>
+                                                <span class="price old-price">￥52,00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-container">
+                                        <div class="left-block">
+                                            <a href="#">
+                                                <img class="img-responsive" src="images/p34.jpg" />
+                                            </a>
+                                            <div class="quick-view">
+                                                <a title="收藏" class="heart" href="wishlist.html"></a>
+                                                <a title="比较" class="compare" href="compare.html"></a>
+                                                <a title="查看" class="search" href="detail.html"></a>
+                                            </div>
+                                            <div class="add-to-cart">
+                                                <a title="加入购物车" href="#add">加入购物车</a>
+                                            </div>
+                                        </div>
+                                        <div class="right-block">
+                                            <h5 class="product-name"><a href="#">上衣</a></h5>
+                                            <div class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                            <div class="content_price">
+                                                <span class="price product-price">￥38,95</span>
+                                                <span class="price old-price">￥52,00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-container">
+                                        <div class="left-block">
+                                            <a href="#">
+                                                <img class="img-responsive" src="images/p36.jpg" />
+                                            </a>
+                                            <div class="quick-view">
+                                                <a title="收藏" class="heart" href="wishlist.html"></a>
+                                                <a title="比较" class="compare" href="compare.html"></a>
+                                                <a title="查看" class="search" href="detail.html"></a>
+                                            </div>
+                                            <div class="add-to-cart">
+                                                <a title="加入购物车" href="#add">加入购物车</a>
+                                            </div>
+                                        </div>
+                                        <div class="right-block">
+                                            <h5 class="product-name"><a href="#">帆布包</a></h5>
+                                            <div class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                            <div class="content_price">
+                                                <span class="price product-price">￥38,95</span>
+                                                <span class="price old-price">￥52,00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-container">
+                                        <div class="left-block">
+                                            <a href="#">
+                                                <img class="img-responsive" src="images/p38.jpg" />
+                                            </a>
+                                            <div class="quick-view">
+                                                <a title="收藏" class="heart" href="wishlist.html"></a>
+                                                <a title="比较" class="compare" href="compare.html"></a>
+                                                <a title="查看" class="search" href="detail.html"></a>
+                                            </div>
+                                            <div class="add-to-cart">
+                                                <a title="加入购物车" href="#add">加入购物车</a>
+                                            </div>
+                                        </div>
+                                        <div class="right-block">
+                                            <h5 class="product-name"><a href="#">围巾</a></h5>
+                                            <div class="product-star">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                            <div class="content_price">
+                                                <span class="price product-price">￥38,95</span>
+                                                <span class="price old-price">￥52,00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="container">
+            <div id="introduce-box" class="row">
+                <div class="col-md-3 col-xs-6">
+                    <div id="address-box">
+                        <a href="category.html"><img src="images/logo2.png" /></a>
+                        <div id="address-list">
+                            <div class="tit-name">地址:</div>
+                            <div class="tit-contain">湖北省武汉市金融港</div>
+                            <div class="tit-name">联系方式:</div>
+                            <div class="tit-contain">+8627 6552 2899 </div>
+                            <div class="tit-name">邮箱:</div>
+                            <div class="tit-contain">support@innovaee.com</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6 pull-right">
+                    <div id="contact-box">
+                        <div class="introduce-title">联系方式</div>
+                        <div class="input-group" id="mail-box">
+                            <input type="text" placeholder="请输入您的邮箱！" />
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">确定</button>
+                          </span>
+                        </div>
+                        <div class="introduce-title">分享</div>
+                        <div class="social-link">
+                            <a href="#"><img src="images/p.png" /></a>
+                            <a href="#"><img src="images/t.png" /></a>
+                            <a href="#"><img src="images/w.png" /></a>
+                            <a href="#"><img src="images/g.png" /></a>
+                            <a href="#"><img src="images/f.png" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12 ">
+                    <div class="row help-list">
+                        <div class="col-sm-4 col-xs-4">
+                            <div class="introduce-title">购物指南</div>
+                            <ul id="introduce-company" class="introduce-list">
+                                <li><a href="category.html">购物流程</a></li>
+                                <li><a href="category.html">客户评价</a></li>
+                                <li><a href="category.html">常见问题</a></li>
+                                <li><a href="category.html">会员介绍</a></li>
+                                <li><a href="contact.html">联系我们</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 col-xs-4">
+                            <div class="introduce-title">配送方式</div>
+                            <ul id="introduce-Account" class="introduce-list">
+                                <li><a href="category.html">上门自提</a></li>
+                                <li><a href="category.html">配送服务查询</a></li>
+                                <li><a href="category.html">配送费收取标准</a></li>
+                                <li><a href="category.html">海外配送</a></li>
+                                <li><a href="category.html">211限时达</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 col-xs-4">
+                            <div class="introduce-title">售后服务</div>
+                            <ul id="introduce-support" class="introduce-list">
+                                <li><a href="category.html">售后政策</a></li>
+                                <li><a href="category.html">价格保护</a></li>
+                                <li><a href="category.html">退款说明</a></li>
+                                <li><a href="category.html">返修/退换货</a></li>
+                                <li><a href="category.html">取消订单</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="trademark-box" class="row">
+                <div class="col-sm-12">
+                    <ul id="trademark-list">
+                        <li id="payment-methods">接受付款方式</li>
+                        <li>
+                            <a href="category.html"><img src="images/trademark-ups.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="category.html"><img src="images/trademark-qiwi.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="category.html"><img src="images/trademark-wu.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="category.html"><img src="images/trademark-cn.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="category.html"><img src="images/trademark-visa.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="category.html"><img src="images/trademark-mc.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="category.html"><img src="images/trademark-ems.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="category.html"><img src="images/trademark-dhl.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="category.html"><img src="images/trademark-fe.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="category.html"><img src="images/trademark-wm.jpg" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="trademark-text-box" class="row">
+                <div class="col-sm-12">
+                    <ul id="trademark-search-list" class="trademark-list">
+                        <li class="trademark-text-tit">热门搜索关键词:</li>
+                        <li><a href="category.html">小米</a></li>
+                        <li><a href="category.html">电脑</a></li>
+                        <li><a href="category.html">苹果手机</a></li>
+                        <li><a href="category.html">Iphoneo 6 Plus</a></li>
+                        <li><a href="category.html">宝女士包包</a></li>
+                        <li><a href="category.html">手表</a></li>
+                        <li><a href="category.html">羽绒服</a></li>
+                        <li><a href="category.html">毛衣</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12">
+                    <ul id="trademark-tv-list" class="trademark-list">
+                        <li class="trademark-text-tit">电视:</li>
+                        <li><a href="category.html">乐视TV（Letv）</a></li>
+                        <li><a href="category.html">飞利浦（PHILIPS）</a></li>
+                        <li><a href="category.html">海信（Hisense）</a></li>
+                        <li><a href="category.html">小米（MI）</a></li>
+                        <li><a href="category.html">创维（Skyworth）</a></li>
+                        <li><a href="category.html">康佳（KONKA）</a></li>
+                        <li><a href="category.html">三星（SAMSUNG）</a></li>
+                        <li><a href="category.html">夏普（SHARP）</a></li>
+                        <li><a href="category.html">索尼（SONY）</a></li>
+                        <li><a href="category.html">长虹（CHANGHONG）</a></li>
+                        <li><a href="category.html">酷开（coocaa）</a></li>
+                        <li><a href="category.html">东芝（TOSHIBA）</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12">
+                    <ul id="trademark-mobile-list" class="trademark-list">
+                        <li class="trademark-text-tit">手机:</li>
+                        <li><a href="category.html">华为</a></li>
+                        <li><a href="category.html">三星</a></li>
+                        <li><a href="category.html">小米</a></li>
+                        <li><a href="category.html">酷派</a></li>
+                        <li><a href="category.html">索尼</a></li>
+                        <li><a href="category.html">中兴</a></li>
+                        <li><a href="category.html">苹果</a></li>
+                        <li><a href="category.html">联想</a></li>
+                        <li><a href="category.html">步步高</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12">
+                    <ul id="trademark-laptop-list" class="trademark-list">
+                        <li class="trademark-text-tit">笔记本电脑::</li>
+                        <li><a href="category.html">苹果</a></li>
+                        <li><a href="category.html">联想</a></li>
+                        <li><a href="category.html">戴尔</a></li>
+                        <li><a href="category.html">惠普</a></li>
+                        <li><a href="category.html">神州</a></li>
+                        <li><a href="category.html">华硕</a></li>
+                        <li><a href="category.html">清华同方</a></li>
+                        <li><a href="category.html">机械革命</a></li>
+                        <li><a href="category.html">雷神</a></li>
+                        <li><a href="category.html">未来人类</a></li>
+                        <li><a href="category.html">三星</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12">
+                    <ul id="trademark-watches-list" class="trademark-list">
+                        <li class="trademark-text-tit">手表:</li>
+                        <li><a href="category.html">天梭</a></li>
+                        <li><a href="category.html">浪琴</a></li>
+                        <li><a href="category.html">美度</a></li>
+                        <li><a href="category.html">卡西欧</a></li>
+                        <li><a href="category.html">飞亚达</a></li>
+                        <li><a href="category.html">罗西尼</a></li>
+                        <li><a href="category.html">海鸥</a></li>
+                        <li><a href="category.html">西铁城</a></li>
+                        <li><a href="category.html">佳明</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12">
+                    <ul id="trademark-shoes-list" class="trademark-list">
+                        <li class="trademark-text-tit">鞋:</li>
+                        <li><a href="category.html">百丽</a></li>
+                        <li><a href="category.html">达芙妮</a></li>
+                        <li><a href="category.html">哈森</a></li>
+                        <li><a href="category.html">莱尔斯丹</a></li>
+                        <li><a href="category.html">千百度</a></li>
+                        <li><a href="category.html">意尔康</a></li>
+                        <li><a href="category.html">卓诗尼</a></li>
+                        <li><a href="category.html">红蜻蜓</a></li>
+                        <li><a href="category.html">大东</a></li>
+                        <li><a href="category.html">奥康</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="footer-menu-box">
+                <div class="col-sm-12">
+                    <ul class="footer-menu-list">
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                        <li><a href="category.html">营销中心</a></li>
+                        <li><a href="category.html">帮助中心</a></li>
+                        <li><a href="category.html">货到付款</a></li>
+                        <li><a href="category.html">商家入驻</a></li>
+                        <li><a href="category.html">特色服务</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12">
+                    <ul class="footer-menu-list">
+                        <li><a href="category.html">武汉市公安局光谷分局备案编号11111111111</a></li>
+                        <li><a href="category.html">武汉ICP证999999号</a></li>
+                        <li><a href="category.html"> 互联网药品信息服务资格证编号(武)-经营性-2015-1224</a></li>
+                        <li><a href="category.html">新出发武零 字第大120024号</a></li>
+                        <li><a href="category.html">音像制品经营许可证苏宿批12224号 </a></li>
+                        <li><a href="category.html">出版物经营许可证编号新出发(苏)批字第N-024号 </a></li>
+                        <li><a href="category.html">互联网出版许可证编号新出网证(武)字150号</a></li>
+                    </ul>
+                </div>
+                <p class="text-center"> Copyright © 2004-2015 轻实训电子商务平台 版权所有</p>
+            </div>
+        </div>
+    </footer>
+    <a href="#" class="scroll_top" title="回到顶部">回到顶部</a>
+    <!-- Script-->
+    <script type="text/javascript" src="plugins/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="plugins/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="plugins/select2/js/select2.js"></script>
+    <script type="text/javascript" src="plugins/owl.carousel/owl.carousel.js"></script>
+    <!-- 放大镜效果 -->
+    <script type="text/javascript" src="plugins/elevatezoom/jquery.elevatezoom.js"></script>
+    <script type="text/javascript" src="plugins/jquery-ui/jquery-ui.js"></script>
+    <!-- 弹出框插件 -->
+    <script type="text/javascript" src="plugins/fancyBox/jquery.fancybox.js"></script>
+    <!-- jQuery库插件  目的：获取不可见的元素的宽度或高度。  菜单栏侧拉框的宽度--> 
+    <script type="text/javascript" src="plugins/jquery.actual/jquery.actual.min.js"></script>
+    <script type="text/javascript" src="js/theme-script.js"></script>
+</body>
+
+</html>

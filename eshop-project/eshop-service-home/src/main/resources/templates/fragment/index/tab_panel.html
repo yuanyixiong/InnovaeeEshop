@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--首页 商品推荐 thymeleaf 模板-->
+<div class="product-featured-tab-content" th:fragment="productList(productList_left)">
+    <div  class="tab-container">
+
+        <div th:include="/fragment/index/tab_panel::${productList_left}"
+             th:each="type,eachState:${node.nodes}" class="tab-panel"
+             th:classappend="${eachState.count eq 1?'active':''}" th:id="|tab-${type.data.id}|"/>
+    </div>
+</div>
+
+<!-- 时尚衣物/家用电器/家装家居 布局一样 -->
+<div th:fragment="fashion">
+    <!--左边边商品列表-->
+    <div class="box-left">
+        <div class="banner-img">
+            <a th:href="@{/product/category(classifyChecked=${type.data.typeParentId},typesChecked=${type.data.id})}"><img th:src="${#image.getImage(type.data.typeImage)}"></a>
+        </div>
+    </div>
+    <!--右边商品列表-->
+    <div class="box-right" th:id="${type.data.id}"></div>
+    <script type="text/javascript" th:inline="javascript">
+        var typeId = /*[[${type.data.id}]]*/null;
+        var url = "/home/getProducts?types=" + typeId + "&pageSize=8";
+        $("#" + typeId).load(url);
+    </script>
+</div>
+
+<!-- 运动器材 -->
+<div th:fragment="sports">
+    <div class="box-left">
+        <div class="deal-product">
+            <div class="deal-product-head">
+                <h3><span>一天的销量</span></h3>
+            </div>
+            <!--轮播图 最近销售-->
+            <ul class="owl-carousel" data-items="1" data-nav="true" data-dots="false">
+                <li class="deal-product-content">
+                    <div class="col-sm-5 deal-product-image">
+                        <a href="category.html"><img src="images/p55.jpg"></a>
+                    </div>
+                    <div class="col-sm-7 deal-product-info">
+                        <p><a href="category.html">运动鞋</a></p>
+                        <div class="price">
+                            <span class="product-price">￥38.95</span>
+                            <span class="old-price">￥52.00</span>
+                            <span class="sale-price">-15%</span>
+                        </div>
+                        <div class="show-count-down">
+                            <span class="countdown-lastest" data-y="2017" data-m="7" data-d="1" data-h="00" data-i="00"
+                                  data-s="00"></span>
+                        </div>
+                        <div class="product-star">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div>
+                        <div class="product-desc">
+                            穿着运动很舒适……
+                        </div>
+                    </div>
+                </li>
+                <li class="deal-product-content">
+                    <div class="col-sm-5 deal-product-image">
+                        <a href="category.html"><img src="images/p58.jpg"></a>
+                    </div>
+                    <div class="col-sm-7 deal-product-info">
+                        <p><a href="category.html">最畅销的产品 2</a></p>
+                        <div class="price">
+                            <span class="product-price">￥38.95</span>
+                            <span class="old-price">￥52.00</span>
+                            <span class="sale-price">-15%</span>
+                        </div>
+                        <div class="show-count-down">
+                            <span class="countdown-lastest" data-y="2015" data-m="10" data-d="1" data-h="00" data-i="00"
+                                  data-s="00"></span>
+                        </div>
+                        <div class="product-star">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div>
+                        <div class="product-desc">
+                            声音性能调优包括最小的细节如……
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--轮播图 促销活动-->
+        <ul class="owl-intab owl-carousel" data-loop="true" data-items="1" data-dots="false" data-nav="true">
+            <li th:each="slideshow,slideshowState:${sport_slideshows}">
+                <a th:href="${slideshow.slideshowUrl}"><img th:src="${#image.getImage(slideshow.slideshowImage)}"></a>
+            </li>
+        </ul>
+    </div>
+    <!--右边商品列表-->
+    <div class="box-right" th:id="${type.data.id}"></div>
+    <script type="text/javascript" th:inline="javascript">
+        var typeId = /*[[${type.data.id}]]*/null;
+        var url = "/home/getProducts?types=" + typeId + "&pageSize=6";
+        $("#" + typeId).load(url);
+    </script>
+</div>
+
+<!-- 数码/相机 -->
+<div th:fragment="digital">
+    <div class="row">
+        <div class="col-sm-12 category-list-product" th:id="${type.data.id}"></div>
+        <script type="text/javascript" th:inline="javascript">
+            var typeId = /*[[${type.data.id}]]*/null;
+            var url = "/home/getProducts?types=" + typeId + "&pageSize=8";
+            $("#" + typeId).load(url);
+        </script>
+    </div>
+</div>
+
+<!--珠宝/首饰-->
+<div th:fragment="jewelry">
+    <!--轮播图 促销活动-->
+    <div class="box-left">
+        <ul class="owl-intab owl-carousel" data-loop="true" data-items="1" data-autoplay="true" data-dots="false"
+            data-nav="true">
+            <li th:each="slideshow,slideshowState:${jewelry_slideshows}">
+                <a th:href="${slideshow.slideshowUrl}"><img th:src="${#image.getImage(slideshow.slideshowImage)}"></a>
+            </li>
+        </ul>
+    </div>
+    <!--上面3个-->
+    <div class="box-right" th:id="${type.data.id}"></div>
+    <script type="text/javascript" th:inline="javascript">
+        var typeId = /*[[${type.data.id}]]*/null;
+        var url = "/home/getProducts?types=" + typeId + "&pageSize=3";
+        $("#" + typeId).load(url);
+    </script>
+    <!--下面5个-->
+    <div class="box-full clearfix" th:id="${type.data.id}"></div>
+    <script type="text/javascript" th:inline="javascript">
+        var typeId = /*[[${type.data.id}]]*/null;
+        var url = "/home/getProducts?types=" + typeId + "&pageSize=5";
+        $("#" + typeId).load(url);
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul class="product-list row">
+    <!--商品循环-->
+    <li class="col-sm-4" th:each="product:${pageInfo.list}">
+        <div class="right-block">
+            <h5 class="product-name" th:text="${product.productName}">11111</h5>
+            <div class="content_price">
+                <span class="price product-price" th:text="|￥${product.skus[0].skuPrice}|">￥138,95</span>
+            </div>
+        </div>
+        <div class="left-block">
+            <a th:href="@{/product/detail(productId=${product.id},skuId=${product.skus[0].id})}" >
+                <img class="img-responsive" th:src="${#image.getImage(product.imgs[0].imgUrl,0)}" />
+            </a>
+            <div class="quick-view">
+                <a title="收藏" class="heart" th:href="|javascript:addCollect('${product.skus[0].id}','${session.currentUser eq null ?'':session.currentUser.id}')|"></a>
+                <a title="比较" class="compare"  th:href="|javascript:addComparisonTable('${product.skus[0].id}')|"></a>
+                <a title="查看" class="search"  th:href="@{/product/detail(productId=${product.id},skuId=${product.skus[0].id})}"></a>
+            </div>
+            <div class="add-to-cart">
+                <a title="加入购物车" th:href="|javascript:addTrolley('${product.skus[0].id}')|">加入购物车</a>
+            </div>
+        </div>
+    </li>
+</ul>
+</body>
+</html>

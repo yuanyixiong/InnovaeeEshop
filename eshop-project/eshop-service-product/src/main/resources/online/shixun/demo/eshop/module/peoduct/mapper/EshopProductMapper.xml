@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="online.shixun.demo.eshop.eshopserviceproduct.module.product.mapper.EshopProductMapper">
+
+
+    <!--//产品列表ResultMap-->
+    <resultMap id="productsWithBLOBsResultMap" type="online.shixun.demo.eshop.eshopserviceproduct.dto.EshopProductWithBLOBs">
+
+        <!--//需要修改别名的-->
+        <id column="product_id" property="id"></id>
+        <result column="product_is_del" property="isDel"></result>
+        <result column="product_create_time" property="createTime"></result>
+        <result column="product_update_time" property="updateTime"></result>
+        <result column="check_user_id" property="checkUserId"></result>
+        <result column="brand_id" property="brandId"></result>
+        <result column="type_id" property="typeId"></result>
+        <!--//无需修改别名的-->
+        <result column="product_name" property="productName"></result>
+        <result column="product_weight" property="productWeight"></result>
+        <result column="product_is_new" property="productIsNew"></result>
+        <result column="product_is_hot" property="productIsHot"></result>
+        <result column="product_is_commend" property="productIsCommend"></result>
+        <result column="product_is_show" property="productIsShow"></result>
+        <result column="product_sales" property="productSales"></result>
+        <result column="product_colors" property="productColors"></result>
+        <result column="product_sizes" property="productSizes"></result>
+        <result column="product_features" property="productFeatures"></result>
+        <result column="product_check_time" property="productCheckTime"></result>
+
+        <result column="product_description" property="productDescription"></result>
+        <result column="product_information" property="productInformation"></result>
+        <result column="product_after_sale" property="productAfterSale"></result>
+
+        <!--//图片-->
+        <collection column="product_id" property="imgs" javaType="online.shixun.demo.eshop.eshopserviceproduct.dto.EshopImg" >
+            <id column="img_id" property="id"></id>
+            <result column="img_is_del" property="isDel"></result>
+            <result column="img_create_time" property="createTime"></result>
+            <result column="img_update_time" property="updateTime"></result>
+            <result column="img_url" property="imgUrl"></result>
+            <result column="img_is_def" property="imgIsDef"></result>
+            <result column="img_name" property="imgName"></result>
+            <result column="img_product_id" property="productId"></result>
+
+        </collection>
+
+        <!--//最小销售单元-->
+        <collection column="product_id" property="skus" javaType="online.shixun.demo.eshop.eshopserviceproduct.dto.EshopSku">
+            <!--//需要修改别名的-->
+            <id column="sku_id" property="id"></id>
+            <result column="sku_is_del" property="isDel"></result>
+            <result column="sku_create_time" property="createTime"></result>
+            <result column="sku_update_time" property="updateTime"></result>
+            <result column="sku_product_id" property="productId"></result>
+            <result column="color_id" property="colorId"></result>
+            <result column="size_id" property="sizeId"></result>
+            <result column="create_user_id" property="createUserId"></result>
+            <result column="update_user_id" property="updateUserId"></result>
+            <!--//无需修改别名的-->
+            <result column="sku_delive_fee" property="skuDeliveFee"></result>
+            <result column="sku_price" property="skuPrice"></result>
+            <result column="sku_stock" property="skuStock"></result>
+            <result column="sku_market_price" property="skuMarketPrice"></result>
+            <result column="sku_upper_limit" property="skuUpperLimit"></result>
+            <result column="sku_location" property="skuLocation"></result>
+            <result column="sku_img" property="skuImg"></result>
+            <result column="sku_index" property="skuIndex"></result>
+            <result column="sku_name" property="skuName"></result>
+            <result column="sku_status" property="skuStatus"></result>
+            <result column="sku_type" property="skuType"></result>
+            <result column="sku_rank" property="skuRank"></result>
+
+        </collection>
+
+    </resultMap>
+
+    <!--//产品列表-->
+    <select id="getProducts" resultMap="productsWithBLOBsResultMap">
+        SELECT
+        <!--//最小销售单元-->
+        sku.id as sku_id, sku.is_del as sku_is_del,
+        sku.create_time as sku_create_time, sku.update_time as sku_update_time,
+        sku.product_id as sku_product_id, sku.color_id,
+        sku.size_id, sku.sku_delive_fee,
+        sku.sku_price, sku.sku_stock,
+        sku.sku_market_price,
+        sku.sku_sales, sku.sku_upper_limit,
+        sku.sku_location, sku.sku_img,
+        sku.sku_index, sku.sku_name,
+        sku.create_user_id, sku.update_user_id,
+        sku.sku_status, sku.sku_type,sku.sku_rank,
+
+        <!--//产品-->
+        product.id as product_id, product.is_del as product_is_del,
+        product.create_time as product_create_time, product.update_time as product_update_time,
+        product.brand_id, product.type_id,
+        product.product_name, product.product_weight,
+        product.product_is_new, product.product_is_hot,
+        product.product_is_commend, product.product_is_show,
+        product.product_sales, product.product_colors,
+        product.product_sizes, product.product_features,
+        product.check_user_id, product.product_check_time,
+        product.product_description,product.product_information,product.product_after_sale,
+
+        <!--//图片-->
+        img.id as img_id, img.is_del as img_is_del,
+        img.create_time as img_create_time, img.update_time as img_update_time,
+        img.img_url, img.img_is_def, img.img_name, img.product_id as img_product_id
+
+        FROM `eshop_product` product
+        <!--//检索基础逻辑要求，销售单元：未移除(is_del=2)，有库存(sku_stock>0，商品：未移除(is_del=2)，已上架(product_is_show=2)-->
+        INNER JOIN `eshop_sku` sku ON product.`id`=sku.`product_id` AND sku.`is_del`=2 AND sku.`sku_stock`>0 AND
+        product.`is_del`=2 AND product.`product_is_show`=2
+        <!--//检索基础逻辑要求，图片：未移除(is_del=2)，是默认显示的主图片(img_is_def=2)-->
+        INNER JOIN `eshop_img` img ON img.`product_id`=product.`id` AND img.`is_del`=2 AND img.img_is_def=2
+
+        <where>
+            <if test="productName!=null and productName!=''">
+                <!--//根据产品名称模糊查询-->
+                and product.`product_name` like CONCAT('%',#{productName},'%')
+            </if>
+            <if test="type!=null and type!=''">
+                <!--//根据产品分类的子分类查询-->
+                and product.type_id in ( SELECT t.id FROM `eshop_type` t WHERE `type_parent_id`=#{type} )
+            </if>
+            <if test="types_set!=null and types_set.size()>0">
+                <!--//根据产品类型查询-->
+                <foreach collection='types_set' index='index' item='item' open='and product.type_id in (' separator=','
+                         close=')'>
+                    #{item}
+                </foreach>
+            </if>
+            <if test="prices_set!=null and prices_set.size()>0">
+                <!--//根据产品的价格查询-->
+                <foreach collection='prices_set' index='index' item='item' open='and (' separator='OR' close=')'>
+                    <![CDATA[
+                        (
+                          sku.sku_price > SUBSTRING(#{item},1,LOCATE('-', #{item})-1)
+                          AND
+                          sku.sku_price < SUBSTRING(#{item},LOCATE('-', #{item})+1,LENGTH(#{item}))
+                        )
+                    ]]>
+                </foreach>
+            </if>
+            <if test="colors_set!=null and colors_set.size()>0">
+                <!--//根据产品颜色查询-->
+                <foreach collection='colors_set' index='index' item='item' open='and sku.color_id in (' separator=','
+                         close=')'>
+                    #{item}
+                </foreach>
+            </if>
+            <if test="brands_set!=null and brands_set.size()>0">
+                <!--//根据产品品牌查询-->
+                <foreach collection='brands_set' index='index' item='item' open='and product.brand_id in ('
+                         separator=',' close=')'>
+                    #{item}
+                </foreach>
+            </if>
+            <if test="sizes_set!=null and sizes_set.size()>0">
+                <!--//根据产品尺码查询-->
+                <foreach collection='sizes_set' index='index' item='item' open='and sku.size_id in (' separator=','
+                         close=')'>
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+</mapper>

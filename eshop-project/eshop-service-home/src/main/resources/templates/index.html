@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--CSS-->
+<head th:include="/fragment/css::css('轻实训电子商务平台')"></head>
+<body class="home">
+<!-- 模态框 -->
+<div class="modal fade" id="messModal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <h4 class="modal-title">提示</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- 模态框主体 -->
+            <div class="modal-body">
+                <span id="mess"></span>
+            </div>
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header头部 -->
+<header id="header" th:replace="/fragment/header::header"></header>
+<!-- 轮播图-->
+<div id="home-slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 slider-left"></div>
+            <div class="col-sm-9 header-top-right">
+                <div id="myCarousel" class="carousel slide">
+                    <!-- 轮播（Carousel）指标 -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- 轮播（Carousel）项目 -->
+                    <div class="carousel-inner">
+                        <div th:each="slideshow,slideshowState:${main_slideshows}" th:classappend="${slideshowState.first?'active':''}" class="item">
+                            <img th:src="${#image.getImage(slideshow.slideshowImage)}" alt="First slide">
+                        </div>
+                    </div>
+                    <!-- 轮播（Carousel）导航 -->
+                    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 轮播图结束-->
+<div class="content-page">
+    <div class="container">
+        <div th:each="node,nodeState:${productTypeMenu}" class="category-featured"
+             th:classappend="${
+                    node.data.typeName eq '时尚衣物'?'fashion':
+                    node.data.typeName eq '运动器材'?'sports':
+                    node.data.typeName eq '家用电器'?'electronic':
+                    node.data.typeName eq '数码/相机'?'digital':
+                    node.data.typeName eq '家装家居'?'furniture':
+                    node.data.typeName eq '珠宝/首饰'?'jewelry':''
+                 }"
+        >
+            <nav class="navbar nav-menu show-brand">
+                <div class="container">
+                    <!-- 品牌和获得更好的移动分组切换显示 -->
+                    <div class="navbar-brand">
+                        <a th:href="${node.data.typeUrl}">
+                            <img th:src="@{/images/icon-fashion.png}"/>
+                            <label th:text="${node.data.typeName}"/>
+                        </a>
+                    </div>
+                    <span class="toggle-menu"></span>
+                    <!-- tab标签页插件 -->
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li th:each="type,typeEachState:${node.nodes}" th:if="${type.data.typeNote eq 'types'}"
+                                th:class="${typeEachState.first ? 'active':''}">
+                                <a data-toggle="tab" th:href="|#tab-${type.data.id}|" th:text="${type.data.typeName}"/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div th:id="${'elevator-'+(nodeState.index+1)}" class="floor-elevator">
+                    <a th:href="${'#elevator-'+(nodeState.index)}" class="btn-elevator up fa fa-angle-up"
+                       th:classappend="${nodeState.first?'disabled':''}"></a>
+                    <a th:href="${'#elevator-'+(nodeState.index+2)}" class="btn-elevator down fa fa-angle-down"
+                       th:classappend="${nodeState.last?'disabled':''}"></a>
+                </div>
+            </nav>
+            <div class="product-featured clearfix">
+                <div class="row">
+
+                    <div class="col-sm-2 sub-category-wapper">
+                        <!--不是运动器材的时候-->
+                        <ul th:unless="${node.data.typeName eq '运动器材'}" class="sub-category-list">
+                            <li class="link_container" th:each="type:${node.nodes}"
+                                th:if="${type.data.typeNote eq 'goods'}">
+                                <a th:href="${type.data.typeUrl}" th:text="${type.data.typeName}"/>
+                            </li>
+                        </ul>
+                        <!--是运动器材的时候-->
+                        <div th:if="${node.data.typeName eq '运动器材'}" class="owl-carousel-vertical" data-items="1"
+                             data-nav="true" data-dots="false" data-loop="true">
+                            <div class="item">
+                                <ul class="sub-category-list">
+                                    <li th:each="type,eachState:${node.nodes}"
+                                        th:if="${type.data.typeNote eq 'goods' and eachState.index lt 18}">
+                                        <a th:href="${type.data.typeUrl}" th:text="${type.data.typeName}"/>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="item">
+                                <ul class="sub-category-list">
+                                    <li th:each="type,eachState:${node.nodes}"
+                                        th:if="${type.data.typeNote eq 'goods' and eachState.index gt 18}">
+                                        <a th:href="${type.data.typeUrl}" th:text="${type.data.typeName}"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 时尚衣物 -->
+                    <div th:switch="${node.data.typeName}" th:case="'时尚衣物'" class="col-sm-10 col-right-tab">
+                        <div class="product-featured-tab-content"
+                             th:include="/fragment/index/tab_panel::productList(productList_left='fashion')"/>
+                    </div>
+                    <!-- 家装家居-->
+                    <div th:switch="${node.data.typeName}" th:case="'家装家居'" class="col-sm-10 col-right-tab">
+                        <div class="product-featured-tab-content"
+                             th:include="/fragment/index/tab_panel::productList(productList_left='fashion')"/>
+                    </div>
+                    <!-- 家用电器 -->
+                    <div th:switch="${node.data.typeName}" th:case="'家用电器'" class="col-sm-10 col-right-tab">
+                        <div class="product-featured-tab-content"
+                             th:include="/fragment/index/tab_panel::productList(productList_left='fashion')"/>
+                    </div>
+
+                    <!-- 运动器材 -->
+                    <div th:switch="${node.data.typeName}" th:case="'运动器材'" class="col-sm-10 col-right-tab">
+                        <div class="product-featured-tab-content"
+                             th:include="/fragment/index/tab_panel::productList(productList_left='sports')"/>
+                    </div>
+
+                    <!-- 珠宝/首饰 -->
+                    <div th:switch="${node.data.typeName}" th:case="'珠宝/首饰'" class="col-sm-10 col-right-tab">
+                        <div class="product-featured-tab-content"
+                             th:include="/fragment/index/tab_panel::productList(productList_left='jewelry')"/>
+                    </div>
+
+                    <!-- 数码/相机 -->
+                    <div th:switch="${node.data.typeName}" th:case="'数码/相机'" class="col-sm-2 manufacture-list">
+                        <div class="manufacture-waper">
+                            <div class="owl-carousel-vertical" data-items="1" data-autoplay="false" data-nav="true"
+                                 data-dots="false" data-loop="true">
+                                <div class="item">
+                                    <ul>
+                                        <!--logo 循环 8-->
+                                        <li th:each="slideshow,slideshowState:${camera_slideshows}" th:if="${slideshowState.index lt 8}">
+                                            <a th:href="${slideshow.slideshowUrl}"><img th:src="${#image.getImage(slideshow.slideshowImage)}"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <ul>
+                                        <!--logo 循环 8-->
+                                        <li th:each="slideshow,slideshowState:${camera_slideshows}" th:if="${slideshowState.index ge 8}">
+                                            <a th:href="${slideshow.slideshowUrl}"><img th:src="${#image.getImage(slideshow.slideshowImage)}"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div th:switch="${node.data.typeName}" th:case="'数码/相机'" class="col-sm-8 col-right-tab">
+                        <div class="product-featured-tab-content"
+                             th:include="/fragment/index/tab_panel::productList(productList_left='digital')"/>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="content-wrap">
+    <div class="container">
+        <!-- 底部广告图 -->
+        <div class="row banner-bottom">
+            <div class="col-sm-6 item-left">
+                <div class="banner-boder-zoom">
+                    <a th:href="@{/product/category}"><img class="img-responsive" th:src="@{/images/banner-botom1.jpg}"/></a>
+                </div>
+            </div>
+            <div class="col-sm-6 item-right">
+                <div class="banner-boder-zoom">
+                    <a th:href="@{/product/category}"><img class="img-responsive" th:src="@{/images/banner-bottom2.jpg}"/></a>
+                </div>
+            </div>
+        </div>
+        <!-- 服务 -->
+        <div class="services">
+            <ul>
+                <li class="col-xs-12 col-sm-6 col-md-4 services-item">
+                    <div class="service-wapper">
+                        <div class="row">
+                            <div class="col-sm-6 image">
+                                <div class="icon">
+                                    <img th:src="@{/images/icon-s1.png}">
+                                </div>
+                                <h3 class="title"><a th:href="@{/product/category}">品类齐全 轻松购物</a></h3>
+                            </div>
+                            <div class="col-sm-6 text">
+                                我们提供具有竞争力的价格1亿以上的产品范围。
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-xs-12 col-sm-6 col-md-4 services-item">
+                    <div class="service-wapper">
+                        <div class="row">
+                            <div class="col-sm-6 image">
+                                <div class="icon">
+                                    <img th:src="@{/images/icon-s2.png}">
+                                </div>
+                                <h3 class="title"><a th:href="@{/product/category}">多仓直发 急速配送</a></h3>
+                            </div>
+                            <div class="col-sm-6 text">
+                                网站5种语言,我们船到超过200个国家和地区。
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-xs-12 col-sm-6 col-md-4 services-item">
+                    <div class="service-wapper">
+                        <div class="row">
+                            <div class="col-sm-6 image">
+                                <div class="icon">
+                                    <img th:src="@{/images/icon-s3.png}">
+                                </div>
+                                <h3 class="title"><a th:href="@{/product/category}">安全支付 </a></h3>
+                            </div>
+                            <div class="col-sm-6 text">
+                                用世界上最受欢迎的支付和安全支付方法。
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-xs-12 col-sm-6 col-md-4 services-item">
+                    <div class="service-wapper">
+                        <div class="row">
+                            <div class="col-sm-6 image">
+                                <div class="icon">
+                                    <img th:src="@{/images/icon-s4.png}">
+                                </div>
+                                <h3 class="title"><a th:href="@{/product/category}">放心购物</a></h3>
+                            </div>
+                            <div class="col-sm-6 text">
+                                我们的买家保护覆盖你的购买点击发货。
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-xs-12 col-sm-6 col-md-4 services-item">
+                    <div class="service-wapper">
+                        <div class="row">
+                            <div class="col-sm-6 image">
+                                <div class="icon">
+                                    <img th:src="@{/images/icon-s5.png}">
+                                </div>
+                                <h3 class="title"><a th:href="@{/product/category}">帮助中心</a></h3>
+                            </div>
+                            <div class="col-sm-6 text">
+                                24小时帮助顺利购物体验。
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-xs-12 col-sm-6 col-md-4 services-item">
+                    <div class="service-wapper">
+                        <div class="row">
+                            <div class="col-sm-6 image">
+                                <div class="icon">
+                                    <img th:src="@{/images/icon-s6.png}">
+                                </div>
+                                <h3 class="title"><a th:href="@{/product/category}">下载APP</a></h3>
+                            </div>
+                            <div class="col-sm-6 text">
+                                下载应用程序并得到轻实训电子商务平台的世界在你的指尖。
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 页底 -->
+<footer id="footer" th:replace="/fragment/footer::footer"></footer>
+<a th:href="@{/product/category}" class="scroll_top" title="回到顶部">回到顶部</a>
+<!--JS-->
+<div th:replace="/fragment/js::js"></div>
+</body>
+</html>

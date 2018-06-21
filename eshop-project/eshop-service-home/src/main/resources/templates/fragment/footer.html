@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 页底 thymeleaf 模板-->
+<footer th:fragment="footer">
+    <div class="container">
+        <div id="introduce-box" class="row">
+            <div class="col-md-3 col-xs-6">
+                <div id="address-box">
+                    <a href="#"><img th:src="@{/images/logo2.png}"/></a>
+                    <div id="address-list">
+                        <div class="tit-name">地址:</div>
+                        <div class="tit-contain">湖北省武汉市金融港</div>
+                        <div class="tit-name">联系方式:</div>
+                        <div class="tit-contain">+8627 6552 2899</div>
+                        <div class="tit-name">邮箱:</div>
+                        <div class="tit-contain">support@innovaee.com</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6 pull-right">
+                <div id="contact-box">
+                    <div class="introduce-title">联系方式</div>
+                    <div class="input-group" id="mail-box">
+                        <input type="text" placeholder="请输入您的邮箱！"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">确定</button>
+                          </span>
+                    </div>
+                    <div class="introduce-title">分享</div>
+                    <div class="social-link">
+                        <a href="#"><img th:src="@{/images/p.png}"/></a>
+                        <a href="#"><img th:src="@{/images/t.png}"/></a>
+                        <a href="#"><img th:src="@{/images/w.png}"/></a>
+                        <a href="#"><img th:src="@{/images/g.png}"/></a>
+                        <a href="#"><img th:src="@{/images/f.png}"/></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12 ">
+                <div class="row help-list">
+                    <div class="col-sm-4 col-xs-4">
+                        <div class="introduce-title">购物指南</div>
+                        <ul id="introduce-company" class="introduce-list">
+                            <li><a href="#">购物流程</a></li>
+                            <li><a href="#">客户评价</a></li>
+                            <li><a href="#">常见问题</a></li>
+                            <li><a href="#">会员介绍</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <div class="introduce-title">配送方式</div>
+                        <ul id="introduce-Account" class="introduce-list">
+                            <li><a href="#">上门自提</a></li>
+                            <li><a href="#">配送服务查询</a></li>
+                            <li><a href="#">配送费收取标准</a></li>
+                            <li><a href="#">海外配送</a></li>
+                            <li><a href="#">211限时达</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <div class="introduce-title">售后服务</div>
+                        <ul id="introduce-support" class="introduce-list">
+                            <li><a href="#">售后政策</a></li>
+                            <li><a href="#">价格保护</a></li>
+                            <li><a href="#">退款说明</a></li>
+                            <li><a href="#">返修/退换货</a></li>
+                            <li><a href="#">取消订单</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="trademark-box" class="row">
+            <div class="col-sm-12">
+                <ul id="trademark-list">
+                    <li id="payment-methods">接受付款方式</li>
+                    <li>
+                        <a href="#"><img th:src="@{/images/trademark-ups.jpg}"/></a>
+                    </li>
+                    <li>
+                        <a href="#"><img th:src="@{/images/trademark-qiwi.jpg}"/></a>
+                    </li>
+                    <li>
+                        <a href="#"><img th:src="@{/images/trademark-wu.jpg}"/></a>
+                    </li>
+                    <li>
+                        <a href="#"><img th:src="@{/images/trademark-cn.jpg}"/></a>
+                    </li>
+                    <li>
+                        <a href="#"><img th:src="@{/images/trademark-visa.jpg}"/></a>
+                    </li>
+                    <li>
+                        <a href="#"><img th:src="@{/images/trademark-mc.jpg}"/></a>
+                    </li>
+                    <li>
+                        <a href="#"><img th:src="@{/images/trademark-ems.jpg}"/></a>
+                    </li>
+                    <li>
+                        <a href="#"><img th:src="@{/images/trademark-dhl.jpg}"/></a>
+                    </li>
+                    <li>
+                        <a href="#"><img th:src="@{/images/trademark-fe.jpg}"/></a>
+                    </li>
+                    <li>
+                        <a href="#"><img th:src="@{/images/trademark-wm.jpg}"/></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="trademark-text-box" class="row">
+            <div class="col-sm-12">
+                <ul id="trademark-search-list" class="trademark-list">
+                    <li class="trademark-text-tit">热门搜索关键词:</li>
+                    <li><a th:href="@{/product/category}">小米</a></li>
+                    <li><a th:href="@{/product/category}">电脑</a></li>
+                    <li><a th:href="@{/product/category}">苹果手机</a></li>
+                    <li><a th:href="@{/product/category}">Iphoneo 6 Plus</a></li>
+                    <li><a th:href="@{/product/category}">宝女士包包</a></li>
+                    <li><a th:href="@{/product/category}">手表</a></li>
+                    <li><a th:href="@{/product/category}">羽绒服</a></li>
+                    <li><a th:href="@{/product/category}">毛衣</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12">
+                <ul id="trademark-tv-list" class="trademark-list">
+                    <li class="trademark-text-tit">电视:</li>
+                    <li><a th:href="@{/product/category}">乐视TV（Letv）</a></li>
+                    <li><a th:href="@{/product/category}">飞利浦（PHILIPS）</a></li>
+                    <li><a th:href="@{/product/category}">海信（Hisense）</a></li>
+                    <li><a th:href="@{/product/category}">小米（MI）</a></li>
+                    <li><a th:href="@{/product/category}">创维（Skyworth）</a></li>
+                    <li><a th:href="@{/product/category}">康佳（KONKA）</a></li>
+                    <li><a th:href="@{/product/category}">三星（SAMSUNG）</a></li>
+                    <li><a th:href="@{/product/category}">夏普（SHARP）</a></li>
+                    <li><a th:href="@{/product/category}">索尼（SONY）</a></li>
+                    <li><a th:href="@{/product/category}">长虹（CHANGHONG）</a></li>
+                    <li><a th:href="@{/product/category}">酷开（coocaa）</a></li>
+                    <li><a th:href="@{/product/category}">东芝（TOSHIBA）</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12">
+                <ul id="trademark-mobile-list" class="trademark-list">
+                    <li class="trademark-text-tit">手机:</li>
+                    <li><a th:href="@{/product/category}">华为</a></li>
+                    <li><a th:href="@{/product/category}">三星</a></li>
+                    <li><a th:href="@{/product/category}">小米</a></li>
+                    <li><a th:href="@{/product/category}">酷派</a></li>
+                    <li><a th:href="@{/product/category}">索尼</a></li>
+                    <li><a th:href="@{/product/category}">中兴</a></li>
+                    <li><a th:href="@{/product/category}">苹果</a></li>
+                    <li><a th:href="@{/product/category}">联想</a></li>
+                    <li><a th:href="@{/product/category}">步步高</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12">
+                <ul id="trademark-laptop-list" class="trademark-list">
+                    <li class="trademark-text-tit">笔记本电脑::</li>
+                    <li><a th:href="@{/product/category}">苹果</a></li>
+                    <li><a th:href="@{/product/category}">联想</a></li>
+                    <li><a th:href="@{/product/category}">戴尔</a></li>
+                    <li><a th:href="@{/product/category}">惠普</a></li>
+                    <li><a th:href="@{/product/category}">神州</a></li>
+                    <li><a th:href="@{/product/category}">华硕</a></li>
+                    <li><a th:href="@{/product/category}">清华同方</a></li>
+                    <li><a th:href="@{/product/category}">机械革命</a></li>
+                    <li><a th:href="@{/product/category}">雷神</a></li>
+                    <li><a th:href="@{/product/category}">未来人类</a></li>
+                    <li><a th:href="@{/product/category}">三星</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12">
+                <ul id="trademark-watches-list" class="trademark-list">
+                    <li class="trademark-text-tit">手表:</li>
+                    <li><a th:href="@{/product/category}">天梭</a></li>
+                    <li><a th:href="@{/product/category}">浪琴</a></li>
+                    <li><a th:href="@{/product/category}">美度</a></li>
+                    <li><a th:href="@{/product/category}">卡西欧</a></li>
+                    <li><a th:href="@{/product/category}">飞亚达</a></li>
+                    <li><a th:href="@{/product/category}">罗西尼</a></li>
+                    <li><a th:href="@{/product/category}">海鸥</a></li>
+                    <li><a th:href="@{/product/category}">西铁城</a></li>
+                    <li><a th:href="@{/product/category}">佳明</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12">
+                <ul id="trademark-shoes-list" class="trademark-list">
+                    <li class="trademark-text-tit">鞋:</li>
+                    <li><a th:href="@{/product/category}">百丽</a></li>
+                    <li><a th:href="@{/product/category}">达芙妮</a></li>
+                    <li><a th:href="@{/product/category}">哈森</a></li>
+                    <li><a th:href="@{/product/category}">莱尔斯丹</a></li>
+                    <li><a th:href="@{/product/category}">千百度</a></li>
+                    <li><a th:href="@{/product/category}">意尔康</a></li>
+                    <li><a th:href="@{/product/category}">卓诗尼</a></li>
+                    <li><a th:href="@{/product/category}">红蜻蜓</a></li>
+                    <li><a th:href="@{/product/category}">大东</a></li>
+                    <li><a th:href="@{/product/category}">奥康</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer-menu-box">
+            <div class="col-sm-12">
+                <ul class="footer-menu-list">
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                    <li><a href="#">营销中心</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">货到付款</a></li>
+                    <li><a href="#">商家入驻</a></li>
+                    <li><a href="#">特色服务</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12">
+                <ul class="footer-menu-list">
+                    <li><a href="#">武汉市公安局光谷分局备案编号11111111111</a></li>
+                    <li><a href="#">武汉ICP证999999号</a></li>
+                    <li><a href="#"> 互联网药品信息服务资格证编号(武)-经营性-2015-1224</a></li>
+                    <li><a href="#">新出发武零 字第大120024号</a></li>
+                    <li><a href="#">音像制品经营许可证苏宿批12224号 </a></li>
+                    <li><a href="#">出版物经营许可证编号新出发(苏)批字第N-024号 </a></li>
+                    <li><a href="#">互联网出版许可证编号新出网证(武)字150号</a></li>
+                </ul>
+            </div>
+            <p class="text-center"> Copyright © 2004-2015 轻实训电子商务平台 版权所有</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

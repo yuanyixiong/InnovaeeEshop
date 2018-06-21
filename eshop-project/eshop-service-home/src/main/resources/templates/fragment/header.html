@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- header头部 thymeleaf 模板-->
+<div th:fragment="header" class="header">
+    <div class="top-header">
+        <div class="container">
+            <div class="nav-top-links">
+                <a class="first-item" th:href="@{/about/main}"><img th:src="@{/images/phone.png}"/> +8627 6552 2899 </a>
+                <a th:href="@{/contact/main}"><img th:src="@{/images/email.png}"/>联系我们</a>
+            </div>
+            <div class="support-link">
+                <a th:href="@{/contact/main}">客户服务</a>
+                <a th:href="@{/contact/main}">帮助中心</a>
+                <a th:href="@{/about/main}">关于我们</a>
+            </div>
+            <div id="user-info-top" class="user-info pull-right">
+                <div class="dropdown">
+                    <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                       href="#"><span>我的账户</span></a>
+                    <ul class="dropdown-menu mega_dropdown" role="menu">
+                        <li th:unless="${session.currentUser}"><a th:href="@{/login}">登录</a></li>
+                        <li th:if="${session.currentUser}"><a th:href="@{/logout}">注销</a></li>
+                        <li><a th:href="@{/order/main}">我的订单</a></li>
+                        <li><a th:href="@{/collect/main}">我的收藏</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container main-header">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 logo">
+                <a th:href="@{/index}"><img th:src="@{/images/logo2.png}"/></a>
+            </div>
+            <div class="col-xs-7 col-sm-7 header-search-box">
+                <form class="form-inline" method="post" th:action="@{/product/category}">
+                    <div class="form-group form-category"></div>
+                    <div class="form-group input-serach">
+                        <input id="productName" name="productName" type="text" placeholder="铃儿响鹿儿跑圣诞礼物提前购！"
+                               th:value="${productName}"/>
+                    </div>
+                    <button type="submit" class="pull-right btn-search"></button>
+                </form>
+            </div>
+            <div class="col-xs-5 col-sm-2 group-button-header">
+                <a title="比较" th:href="@{/comparison/toList}" class="btn-compare">比较商品</a>
+                <a title="收藏" th:href="@{/collect/main}" class="btn-heart">我的收藏</a>
+                <div id="trolley" class="btn-cart">
+                    <!--//jQuery load 加载购物车-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:fragment="types" id="nav-top-menu" class="nav-top-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3" id="box-vertical-megamenus">
+                    <div class="box-vertical-megamenus">
+                        <h4 class="title">
+                            <span class="title-menu">全部商品分类</span>
+                            <span class="btn-open-mobile pull-right home-page"><i class="fa fa-bars"></i></span>
+                        </h4>
+                        <div class="vertical-menu-content is-home">
+                            <ul class="vertical-menu-list">
+                                <!--一级菜单(垂直导航栏)-->
+                                <li th:each="one_menu,eachState:${verticalNavigationMenu}"
+                                    th:class="${eachState.index>10?'cat-link-orther':''}">
+                                    <a th:class="${#lists.size(one_menu.nodes) gt 0 ? 'parent':''}"
+                                       th:href="${one_menu.data.resourceUrl}">
+                                        <img class="icon-menu" th:src="${#image.getImage(one_menu.data.resourceIco)}"
+                                             th:text="${one_menu.data.resourceName}"></a>
+                                    <div class="vertical-dropdown-menu" th:if="${#lists.size(one_menu.nodes)}">
+                                        <div class="vertical-groups col-sm-12">
+                                            <!--二级菜单(垂直导航栏)-->
+                                            <div class="mega-group col-sm-4" th:each="tow_menu:${one_menu.nodes}">
+                                                <h4 class="mega-group-header"><span
+                                                        th:text="${tow_menu.data.resourceName}"></span></h4>
+                                                <!--三级菜单(垂直导航栏)-->
+                                                <ul class="group-link-default" th:each="three_menu:${tow_menu.nodes}">
+                                                    <li><a th:href="${three_menu.data.resourceUrl}"
+                                                           th:text="${three_menu.data.resourceName}"></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mega-custom-html col-sm-12">
+                                                <a th:if="${one_menu.data.resourceImage}"
+                                                   th:href="${one_menu.data.resourceUrl}">
+                                                    <img th:src="${#image.getImage(one_menu.data.resourceImage)}">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="all-category"><span class="open-cate">所有分类</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="main-menu" class="col-sm-9 main-menu">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <a class="navbar-brand" href="index.html">菜单</a>
+                            </div>
+                            <div id="navbar" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <!--一级菜单(水平导航栏)-->
+                                    <li th:class="${#lists.size(one_menu.nodes) gt 0 ?'dropdown':''}"
+                                        th:each="one_menu:${levelNavigationMenu}">
+                                        <a th:href="${one_menu.data.resourceUrl}" class="dropdown-toggle"
+                                           data-toggle="dropdown"
+                                           th:text="${one_menu.data.resourceName}"></a>
+
+                                        <!--有三级菜单的情况-->
+                                        <ul class="dropdown-menu mega_dropdown" role="menu"
+                                            th:if="${#lists.size(one_menu.nodes) gt 0 and #lists.size(one_menu.nodes[0].nodes) gt 0}">
+                                            <!--二级菜单(水平导航栏)-->
+                                            <li class="block-container col-sm-3" th:each="tow_menu:${one_menu.nodes}">
+                                                <ul class="block">
+                                                    <li class="img_container" th:if="${tow_menu.data.resourceImage}">
+                                                        <a th:href="${tow_menu.data.resourceUrl}">
+                                                            <img class="img-responsive"
+                                                                 th:src="${#image.getImage(tow_menu.data.resourceImage)}"/>
+                                                        </a>
+                                                    </li>
+                                                    <li class="link_container group_header">
+                                                        <a th:href="${tow_menu.data.resourceUrl}"
+                                                           th:text="${tow_menu.data.resourceName}"></a>
+                                                    </li>
+                                                    <!--三级菜单(水平导航栏)-->
+                                                    <li th:href="${tow_menu.data.resourceUrl}"
+                                                        th:each="three_menu:${tow_menu.nodes}">
+                                                        <a th:href="${tow_menu.data.resourceUrl}"
+                                                           th:text="${three_menu.data.resourceName}"></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+
+                                        <!--无三级菜单的情况-->
+                                        <ul class="dropdown-menu container-fluid"
+                                            th:if="${#lists.size(one_menu.nodes) gt 0 and #lists.size(one_menu.nodes[0].nodes) eq 0}">
+                                            <li class="block-container">
+                                                <ul class="block">
+                                                    <li class="link_container" th:each="tow_menu:${one_menu.nodes}"><a
+                                                            th:href="${tow_menu.data.resourceUrl}"
+                                                            th:text="${tow_menu.data.resourceName}"></a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div id="form-search-opntop">
+            </div>
+            <!-- 顶部的个人中心-->
+            <div id="user-info-opntop">
+            </div>
+            <!-- 导航栏购物车图标 -->
+            <div id="shopping-cart-box-ontop">
+                <i class="fa fa-shopping-cart"></i>
+                <div class="shopping-cart-box-ontop-content"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" th:src="@{/plugins/jquery/jquery-1.11.2.min.js}"></script>
+</div>
+</body>
+</html>

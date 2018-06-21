@@ -1,0 +1,30 @@
+<head xmlns:th="http://www.thymeleaf.com" th:fragment="css(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 自适应移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap 样式引用-->
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/bootstrap/css/bootstrap.css}"/>
+    <!-- 图标字体引用 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/font-awesome/css/font-awesome.css}"/>
+    <!-- html select美化模拟类jquery插件样式，搜索框引用 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/select2/css/select2.css}"/>
+    <!-- 响应式内容滑动插件样式 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/jquery.bxslider/jquery.bxslider.css}"/>
+    <!-- 幻灯片插件样式 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/owl.carousel/owl.carousel.css}"/>
+    <!-- jQuery UI 是一个建立在 jQuery JavaScript 库上的小部件和交互库，您可以使用它创建高度交互的 Web 应用程序 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/jquery-ui/jquery-ui.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/fancyBox/jquery.fancybox.css}"/>
+    <!-- 预设css3动画库样式 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}"/>
+    <!-- css重设 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/reset.css}"/>
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <!-- 自定义首页样式 -->
+    <link rel="stylesheet" type="text/css"th:href="@{/css/index.css}" />
+    <!-- 响应式布局样式 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/responsive.css}"/>
+    <title th:text="${title}"></title>
+</head>
