@@ -1,0 +1,11 @@
+server:
+  port: 11001
+spring:
+  application:
+    name: eshop-zipkin
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.7.11:9001/eureka/,http://192.168.7.11:9002/eureka/
+
+

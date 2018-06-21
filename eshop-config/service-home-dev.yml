@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: service-home
+  # 指定链路追踪服务器
+  zipkin:
+    base-url: http://eshop-zipkin
+  #页面模板引擎
+  thymeleaf:
+    cache: true  #开启缓存
+    mode: LEGACYHTML5 #使用非严格模式
+    prefix: classpath:/templates
+    suffix: .html
+    encoding: UTF-8
+    content-type: text/html
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.7.11:9001/eureka/,http://192.168.7.11:9002/eureka/
+# feign 断路器启动
+feign:
+  hystrix:
+    enabled: true
+
+
+#调试日志
+logging:
+  level:
+    online.shixun.demo.eshop.module: debug
+    org.springframework.web: debug
+
+system:
+  #系统文件
+  file:
+    images:
+      service:
+        nginxVisitURL: http://192.168.7.11:85/ #文件服务器访问地址

@@ -1,0 +1,19 @@
+server:
+  port: 10011
+spring:
+  application:
+    name: eshop-zuul
+  # 指定链路追踪服务器
+  zipkin:
+    base-url: http://eshop-zipkin
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.7.11:9001/eureka/,http://192.168.7.11:9002/eureka/
+#路由网关请求流转控制
+zuul:
+  routes:
+    home-zuul-/:
+      path: /**
+      serviceId: service-home
+

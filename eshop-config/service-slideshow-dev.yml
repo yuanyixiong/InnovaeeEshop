@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: service-slideshow
+  # 指定链路追踪服务器
+  zipkin:
+    base-url: http://eshop-zipkin
+  #数据库连接
+  datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://192.168.7.11:3306/eshop_spring_cloud?characterEncoding=UTF-8&serverTimezone=Hongkong
+      driver-class-name: com.mysql.jdbc.Driver
+      #username: root
+      #password: inv4dev2018
+      username: yyx
+      password: yyx
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.7.11:9001/eureka/,http://192.168.7.11:9002/eureka/
+
+system:
+  page:
+    size: 15               #常规分页
+    productSize: 18       #商品列表分页
+
+logging:
+  level:
+    online.shixun.demo.eshop: debug

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: eshop-turbine
+server:
+  port: 11006
+security:
+  basic:
+    enabled: false
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig: service-home
+  clusterNameExpression: new String("default")
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.7.11:9001/eureka/,http://192.168.7.11:9002/eureka/
